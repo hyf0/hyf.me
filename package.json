@@ -1,0 +1,39 @@
+{
+  "name": "hyf.me",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "dev:cache": "CACHE=1 vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "typecheck": "tsc --noEmit",
+    "format": "oxfmt",
+    "test": "pnpm typecheck"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.2",
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "dotenv": "^17.2.3",
+    "oxfmt": "^0.6.0",
+    "postcss": "^8.5.6",
+    "prismjs": "^1.30.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitepress": "2.0.0-alpha.12"
+  },
+  "dependencies": {
+    "notion-client": "^7.7.1",
+    "notion-types": "^7.7.1",
+    "notion-utils": "^7.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-notion-x": "^7.7.1"
+  }
+}
