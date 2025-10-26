@@ -65,5 +65,32 @@ export default defineRoutes({
     if (typeof pageData.params?.htmlContent === 'string') {
       pageData.frontmatter.htmlContent = pageData.params.htmlContent
     }
+
+    // Add Open Graph and Twitter Card meta tags
+    const title = pageData.params?.title || pageData.title
+    const description = pageData.frontmatter?.description || `Blog post by Yunfei He`
+    const url = `https://hyf.me/blog/${pageData.params?.path || ''}`
+    const image = pageData.frontmatter?.image || 'https://hyf.me/og-image.png'
+
+    pageData.frontmatter.head = [
+      // Open Graph
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:type', content: 'article' }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:image', content: image }],
+
+      // Twitter Card
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:image', content: image }],
+      ['meta', { name: 'twitter:site', content: '@_hyf0' }],
+      ['meta', { name: 'twitter:creator', content: '@_hyf0' }],
+
+      // Article metadata
+      ['meta', { property: 'article:published_time', content: pageData.params?.date || '' }],
+      ['meta', { property: 'article:author', content: 'Yunfei He' }],
+    ]
   },
 });
