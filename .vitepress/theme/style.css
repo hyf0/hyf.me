@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Notion content dark mode switching */
+/* Ensure proper display toggling between light and dark versions */
+.notion-light-mode {
+  display: block;
+}
+
+.dark .notion-light-mode {
+  display: none;
+}
+
+.notion-dark-mode {
+  display: none;
+}
+
+.dark .notion-dark-mode {
+  display: block;
+}
+
+/* Force Tailwind to generate dark mode text utilities */
+@layer utilities {
+  .dark\:text-white:where(.dark, .dark *) {
+    color: white;
+  }
+
+  .dark\:text-gray-400:where(.dark, .dark *) {
+    color: rgb(156 163 175);
+  }
+
+  .dark\:border-gray-700:where(.dark, .dark *) {
+    border-color: rgb(55 65 81);
+  }
+
+  .dark\:text-blue-400:where(.dark, .dark *) {
+    color: rgb(96 165 250);
+  }
+
+  .dark\:text-gray-100:where(.dark, .dark *) {
+    color: rgb(243 244 246);
+  }
+}

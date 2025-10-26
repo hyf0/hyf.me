@@ -18,66 +18,24 @@ function formatDate(dateString) {
 }
 </script>
 
-<style scoped>
-.blog-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-.blog-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.blog-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.blog-item:last-child {
-  border-bottom: none;
-}
-
-.blog-title {
-  flex: 1;
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.blog-title a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.blog-title a:hover {
-  color: #666;
-}
-
-.blog-date {
-  flex-shrink: 0;
-  font-size: 0.875rem;
-  color: #999;
-  white-space: nowrap;
-}
-</style>
-
-<div class="blog-container">
-  <ul class="blog-list">
-    <li v-for="post in posts" :key="post.url" class="blog-item">
-      <h2 class="blog-title">
-        <a :href="post.url">{{ post.title }}</a>
+<div class="max-w-3xl mx-auto py-16 px-8">
+  <ul class="list-none p-0 m-0">
+    <li
+      v-for="post in posts"
+      :key="post.url"
+      class="flex justify-between items-baseline gap-8 py-6 border-b border-gray-200 dark:border-gray-700 last:border-b-0"
+    >
+      <h2 class="flex-1 m-0 text-lg font-bold">
+        <a
+          :href="post.url"
+          class="relative no-underline text-gray-900 dark:text-gray-100 transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-blue-600 dark:after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+        >
+          {{ post.title }}
+        </a>
       </h2>
-      <span class="blog-date">{{ formatDate(post.date) }}</span>
+      <span class="flex-shrink-0 text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+        {{ formatDate(post.date) }}
+      </span>
     </li>
   </ul>
 </div>
