@@ -15,6 +15,7 @@ export default (async (): Promise<UserConfig> => {
 
   return defineConfig({
     srcDir: "site",
+    cleanUrls: true,
     head: process.env.NODE_ENV === "production" ? [
       [
         'script',
