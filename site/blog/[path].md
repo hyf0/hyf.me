@@ -20,9 +20,9 @@ const { frontmatter } = useData()
 const htmlContent = frontmatter.value.htmlContent || ''
 </script>
 
-<article class="max-w-3xl mx-auto py-12 px-8">
+<article class="vp-raw max-w-3xl mx-auto py-12 px-8">
   <header class="box-border mx-auto mb-5 border-b border-gray-200 dark:border-gray-700" style="width: var(--notion-max-width); padding-left: calc(min(16px, 8vw)); padding-right: calc(min(16px, 8vw));">
-    <h1 class="text-4xl font-bold text-gray-900 dark:text-white m-0 mb-4 leading-tight">
+    <h1 class="text-4xl font-bold  dark:text-white m-0 mb-4 leading-tight">
       {{ $params.title }}
     </h1>
     <time class="text-sm text-gray-500 dark:text-gray-400">
